@@ -3,4 +3,4 @@
 - name: js-trial
 - repo: https://github.com/mandober/js-trial
 - lang: JS
-- desc: Exploring JS
+- desc: JS explorations
