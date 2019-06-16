@@ -1,4 +1,6 @@
-# js-fp
+# JS Trial
 
-Exercise in FP (functional programing) in JS
-
+- name: js-trial
+- repo: https://github.com/mandober/js-trial
+- lang: JS
+- desc: Exploring JS

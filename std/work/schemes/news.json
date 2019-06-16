@@ -1,0 +1,43 @@
+{
+    "published": "date of publishing",
+    "cc"       : "2 letter country code",
+    "flag"     : "/img/flags/${cc}.gif",
+    "url"      : "/litters/${slug}/",
+    "kennel"   : "name of kennel",
+    "sire"     : "name of sire",
+    "dame"     : "name of dame",
+    "whelped"  : "litter whelped date"
+}
+
+// scheme:
+{
+    "pub": {
+        "pub": "date published 2017-06-11",
+        "year": 2017,
+        "stamp": "unix timestamp"
+    },
+    "dob"      : {
+        "year" : 2017,
+        "dob"  : "2017-06-02",
+        "stamp": "unix timestamp"
+    },
+    "expires"  : "&{pub.stamp} + 6 months",
+    "kennel"   : {
+        "name"   : "kennel name",
+        "country": "country name",
+        "cc"     : "2 letter country code",
+        "flag"   : "/img/flags/${cc}.gif"
+    },
+    "sire": {
+        "name" : "name of sire",
+        "first": "first name of sire",
+        "thumb": "${sire.first}3.jpg"
+    },
+    "dame": {
+        "name" : "name of dame",
+        "first": "first name of dame",
+        "thumb": "${dame.first}3.jpg"
+    },
+    "slug": "${kennel}_${pub.year}_${sire.first}_${dame.first}",
+    "uri" : "/litters/${slug}/"
+}
