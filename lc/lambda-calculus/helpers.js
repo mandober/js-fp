@@ -1,0 +1,1 @@
+const isInt = (n) => Number.isInteger(n) ? true : false;
