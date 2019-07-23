@@ -32,5 +32,28 @@ n=2 : d3 < 31
 
 
 */
-assert = require('assert');
-assert(2 + 2 === 4);
+
+//assert = require('assert');
+//assert(2 + 2 === 4);
+
+
+// Sum the digits: 95 -> 14
+const sumDigits = num => 
+  num.toString()
+     .split("")
+     .reduce((a, b) => (+a) + (+b));
+
+// Reduces a number down to the single digit by repeatedly summing its digits.
+// Keep summing digits until only one remains: 95 -> 14 -> 5 
+const reduceDigits = num => {
+  num = num.toString().split("").reduce((a, b) => (+a) + (+b));
+  return (num.toString().length > 1)
+    ? reduceDigits(+num)
+    : +num;
+}
+
+
+
+
+
+

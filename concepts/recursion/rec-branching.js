@@ -1,11 +1,22 @@
 /*
-Write a function that, given a number, x, tries to find a sequence of
-steps (additions and multiplications) that produces x. Steps are created
-by starting from 1 and then (repeatedly) either add 5 or multiply by 3.
+Recursive branching
 
-For example,
-13 = 1 *3 +5 +5
-15 = unreachable
+    This is the recursive function that accepts a number and, starting with 1,
+    either outputs the sequence of steps to produce the given number, or asserts
+    that such a sequence does not exists. A step is either an addition with 5,
+    or a multiplication with 3. Any sequence of steps is acceptable, regardless
+    if there may be a solution using fewer steps (shorter sequence).
+
+    For example, given the number 13, the correct sequence consists of 3 steps:
+    `(*3, +5, +5)`. On the other hand, 15 is unreachable, `()`.
+
+Strategy
+
+    First the "left" path (adding 5) is explored, and only if it fails the
+    "right" path (multiplying by 3) is considered. This behaviour is the
+    consequence of the `||` operator -- if the left branch succeeds, the right
+    branch is never considered, even though it may yield a solution with a
+    shorter number of steps.
 
 */
 
@@ -17,14 +28,6 @@ function branch(x, acc = 1, seq = "1") {
     if (acc === x) return seq;  // bingo!
     if (acc > x) return false;  // overshot
     // rec case:
-    //
-    // First the left branch is explored and only if it fails the
-    // right branch is explored. If the left branch doesn't fail
-    // then the execution will never reach the right branch.
-    //
-    // This means the shortest path to the solution (if it has more
-    // than 1 path) may not be the one that is returned, since it will
-    // just return a solution, i.e. the first one found.
     return (branch(x, acc+5, seq+" +5") || branch(x, acc*3, seq+" *3"));
 }
 

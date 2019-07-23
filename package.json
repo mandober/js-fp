@@ -7,7 +7,7 @@
     "lc": "node ./src/lc/lc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ivanilic <jsbx@yahoo.com> (https://github.com/mandober/)",
+  "author": "ivanilic <ilicivan@zoho.com> (https://github.com/mandober/)",
   "license": "MIT",
   "dependencies": {
     "futil": "^1.55.1",

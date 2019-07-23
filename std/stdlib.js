@@ -1,21 +1,36 @@
+// @ts-check
+
 /*
-ć-lib utilities
+ć
+A B Γ Δ  E Z H Θ  I K Λ M  N Ξ O Π  P Σ T Υ  Φ X Ψ Ω
+α β γ δ  ϵ ζ η θ  ι κ λ μ  ν ξ o π  ρ σ τ υ  ϕ χ ψ ω
+
+ά ϐ ∂ ∆  ε έ ή ϑ  ί ϰ          ό ϖ  ϱ ϛ ύ ϒ  φ     ώ
+ϝ ϟ ς Ϙ ϙ ϡ Ͳ
+
+άλφα    βήτα   γάμμα    δέλτα
+έψιλον  ζήτα   ήτα      θήτα
+ιώτα    κάππα  λάμδα    μυ
+νυ      ξι     όμικρον  πι
+ρώ      σίγμα  ταυ      ύψιλον
+φι      χι     ψι       ωμέγα
+
 
 
 */
 'use strict';
 
-// ć object as namespace
-let ć = {
+// u namespace (object)
+let u = {
   id: "ć-lib",
   version: "0.0.1",
 };
 
-ć.curry = (f, arr = []) => (...args) => g =>
+u.curry = (f, arr = []) => (...args) => g =>
       g.length === f.length ? f(...g) : curry(f, g)([...arr, ...args]);
 
 
-module.exports = ć;
+module.exports = u;
 
 
 

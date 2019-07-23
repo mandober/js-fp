@@ -23,7 +23,7 @@ console.log(fac_iter(5));
 // =============================
 // Factorial 2: naive recursion
 // =============================
-const fac = x => x < 2 ? 1 : x * fac(--x);
+const fac = x => x < 2 ? 1 : x * fac(x-1);
 console.log(fac(5));
 
 // =============================

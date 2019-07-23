@@ -1,3 +1,5 @@
+// @ts-check
+
 'use strict';
 /**
  * Convert a binary fn whose 2nd arg is optional into unary fn

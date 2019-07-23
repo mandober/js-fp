@@ -12,7 +12,8 @@ in strict mode only.
 
 To check,use the tests from node.green:
 
-DOES NOTWORK IN Node v.8.0 +
+===== TCO WAS DEPRECATED IN Node v.8.0+ =====
+
 */
 
 /*

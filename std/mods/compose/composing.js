@@ -9,6 +9,8 @@
   In Lambda Calculus composition combinator is named "Bluebird"
   after Curry's B-combinator.
 
+  f ° ⁿ - nfold
+
 */
 
 
