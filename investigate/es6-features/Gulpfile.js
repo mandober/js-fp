@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var lrserver = require('tiny-lr');
-var livereload = require('gulp-livereload');
-var connect = require('connect');
-var traceur = require('gulp-traceur');
+var gulp = require('./gulp');
+var lrserver = require('./tiny-lr');
+var livereload = require('./gulp-livereload');
+var connect = require('./connect');
+var traceur = require('./gulp-traceur');
 
 var WEB_PORT = 9000;
 var lrs = lrserver();
@@ -15,7 +15,7 @@ gulp.task('lr-server', function () {
 
 gulp.task('http-server', function () {
     connect()
-        .use(require('connect-livereload')())
+        .use(require('./connect-livereload')())
         .use(connect.static('app'))
         .use(connect.static('bower_components'))
         .listen(WEB_PORT);

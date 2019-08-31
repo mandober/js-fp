@@ -11,13 +11,10 @@
 const curry = (f, arr = []) =>
   (...args) =>
     g =>
-      g.length === f.length
-        ? f(...g)
-        : curry(f, g)
-  ([...arr, ...args]);
-
+      g.length === f.length ? f(...g) : curry(f, g)([...arr, ...args]);
 
 module.exports = curry;
+
 
 /**
  * ES5 version of above
@@ -30,16 +27,14 @@ module.exports = curry;
  * `getNextParams`
  *
  */
-function curryExpanded(originalFunction, initialParams = []) {
+function curryExt(originalFunction, initialParams = []) {
   return function getNextParams(...nextParams) {
-      function curriedFunction(params) {
-          if (params.length === originalFunction.length) {
-              return originalFunction(...params);
-          }
-          return curryExpanded(originalFunction, params);
-      };
-      return curriedFunction([...initialParams, ...nextParams]);
+    function curriedFunction(params) {
+      if (params.length === originalFunction.length) {
+        return originalFunction(...params);
+      }
+      return curryExt(originalFunction, params);
+    };
+    return curriedFunction([...initialParams, ...nextParams]);
   };
 };
-
-
